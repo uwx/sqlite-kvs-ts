@@ -5,7 +5,7 @@ import { DatabaseSync, type StatementSync } from 'node:sqlite';
 interface Model { key: string, value: string, ctime: number, mtime: number }
 
 export class KVS<K extends string, V> {
-    private readonly db: DatabaseSync | null;
+    private readonly db: DatabaseSync;
     private readonly stmt_insert: StatementSync;
     private readonly stmt_get: StatementSync;
     private readonly stmt_update: StatementSync;
